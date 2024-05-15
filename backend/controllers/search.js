@@ -6,7 +6,6 @@ export const searchPlayer = async (req, res = response) => {
     const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${query}`)
 
     const allPlayers = response.data.player
-    console.log(allPlayers)
     if (allPlayers === null) {
       return res.status(500).json({ message: 'Player not found' })
     }
