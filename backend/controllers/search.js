@@ -4,7 +4,6 @@ export const searchPlayer = async (req, res = response) => {
   try {
     const { query } = req.query
     const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${query}`)
-    console.log(response)
 
     const allPlayers = response.data.player
     console.log(allPlayers)
